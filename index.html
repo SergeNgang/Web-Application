@@ -2,70 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Week 2</title>
-    <script src="script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Municipality Employment Statistics</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>User Data</h1>
-    <table id="user-table">
-        <thead>
-            <tr>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Admin</th>
-                <th>Image</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>James</td>
-                <td>james@gmail.com</td>
-                <td>X</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Micheal</td>
-                <td>micheal@gmail.com</td>
-                <td>-</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>AnotherUser222</td>
-                <td>example@email.com</td>
-                <td>-</td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <form id="user-form">
-        <div>
-            <label for="input-username">Username:</label>
-            <input type="text" id="input-username" required>
-        </div>
-        <br>
-        <div>
-            <label for="input-email">Email:</label>
-            <input type="email" id="input-email" required>
-        </div>
-        <br>
-        <div>
-            <label for="input-admin">Admin:</label>
-            <input type="checkbox" id="input-admin">
-        </div>
-        <br>
-        <div>
-            <label for="input-image">Image:</label>
-            <input type="file" id="input-image" accept="image/*">
-        </div>
-        <br>
-        <div>
-            <button type="submit" id="submit-data">Submit Data</button>
-        </div>
-    </form>
-    <br>
-    <div>
-        <button id="empty-table">Empty Table</button>
+
+    <div class="center">
+        <h1>Municipality employment statistics in Finland</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Municipality</th>
+                    <th>Population</th>
+                    <th>Employment amount</th>
+                    <th>Employment-%</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
