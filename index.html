@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Population Growth</title>
-    <script src="https://unpkg.com/frappe-charts@1.6.2/dist/frappe-charts.min.umd.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
-    <div>
-        <label for="input-area">Enter municipality</label>
-        <input type="text" id="input-area" placeholder="whole country">
-        <button type="button" id="submit-data">Submit</button>
-    </div>
-    <div id="chart"></div>
-    <div>
-        <button type="button" id="add-data">View estimative data</button>
-        <a href="newchart.html" id="navigation"><button type="button">View birth and death charts</button></a>
-    </div>
-    <script src="script.js"></script>
+<body class="theme-default">
+  <div class="app-container">
+    <header class="top-bar">
+      <div class="search-section">
+        <input type="text" id="city-input" placeholder="Search city here..." autocomplete="off" />
+        <button id="search-btn" type="button">Search</button>
+        <button id="geo-btn" type="button" title="Use current location">Live Location</button>
+      </div>
+      <div class="controls-section">
+        <div class="unit-toggle" id="unit-toggle">
+          <button class="unit-btn active" data-unit="metric">°C</button>
+          <button class="unit-btn" data-unit="imperial">°F</button>
+          <button class="unit-btn" data-unit="standard">K</button>
+        </div>
+        <button id="fav-toggle-btn" type="button" title="Toggle Favorite">Favorite</button>
+      </div>
+    </header>
+    <div id="favorites-bar" class="favorites-bar"></div>
+    <main class="weather-content">
+      <section class="current-weather-card" id="current-weather">
+        <h1 id="location-name">--</h1>
+        <div class="current-main">
+          <img id="current-icon" src="" alt="Condition icon" class="weather-icon hidden" />
+          <div class="temp-display" id="current-temp">--</div>
+        </div>
+        <p id="current-description">--</p>
+        <div class="provider-badge" id="provider-badge">Sources: Open-Meteo, OpenWeather, WeatherAPI</div>
+      </section>
+      <section class="chart-section">
+        <h2>24-Hour Forecast Comparison</h2>
+        <div class="chart-wrapper">
+          <canvas id="comparisonChart"></canvas>
+        </div>
+      </section>
+      <section class="hourly-section">
+        <h2>Hourly Forecast (Next 24 Hours)</h2>
+        <div class="hourly-container" id="hourly-container"></div>
+      </section>
+      <!-- 7-Day Forecast Grid -->
+      <section class="daily-section">
+        <h2>7-Day Forecast</h2>
+        <div class="daily-container" id="daily-container"></div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
